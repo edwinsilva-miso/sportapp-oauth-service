@@ -77,7 +77,7 @@ $ cd ~/location/sportapp-oauth-service
 
 Then, execute the docker-compose command when Docker service is up:
 
-```
+```shell
 $ docker-compose up -d postgres
 ```
 
@@ -99,6 +99,21 @@ In the directory /script of the root application, are the scripts to restore the
 - [03_app_user_202403151946.sql](scripts%2F03_app_user_202403151946.sql)
 
 The scripts are ordered by execution, so is required to run them according to this order.
+
+## Message Queue
+
+This project uses RabbitMQ for messagig queue. For this configuration you can run it via docker compose:
+
+```shell
+$ docker-compose up -d rabbitmq
+```
+
+| Property    | Value            |
+|-------------|------------------|
+| RABBIT_URL  | `localhost:5672` |
+| RABBIT_USER | `admin`          |
+| RABBIT_PASS | `admin`          |
+| QUEUE_NAME  | `alertas`        |
 
 ## Project setup
 

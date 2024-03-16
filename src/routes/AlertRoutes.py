@@ -22,7 +22,7 @@ def generate_alert():
         
         # Crear el mensaje con la hora
         mensaje = f"{hora}: {mensaje}: {critico}"
-        response = AlertService.enviar_alerta(mensaje)
+        response = AlertService.send_alert(mensaje)
         return {'status': response}
     else:
         response = jsonify({'message': 'Unauthorized'})
